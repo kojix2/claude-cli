@@ -1,6 +1,8 @@
 module Claude
   class Anthropic
     class ContentBlock
+      include JSON::Serializable
+
       property type : String
       property text : String?
       property source : Hash(String, String)?
@@ -10,10 +12,12 @@ module Claude
     end
 
     class Message
-      property role : String
-      property content : Array(ContentBlock)
+      include JSON::Serializable
 
-      def initialize(@role : String, @content : Array(ContentBlock))
+      property role : String
+      property content : String | Array(ContentBlock)
+
+      def initialize(@role : String, @content : String | Array(ContentBlock))
       end
     end
   end

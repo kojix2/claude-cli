@@ -35,7 +35,7 @@ module Claude
     def message
       client = Anthropic.new
       messages = [
-        {"role": "user", "content": option.message},
+        Anthropic::Message.new(role: "user", content: option.message),
       ].to_json
 
       result = ""

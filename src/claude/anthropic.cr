@@ -4,6 +4,7 @@ require "../ext/crest"
 require "./exceptions"
 require "./config"
 require "./version"
+require "./anthropic/message"
 
 module Claude
   class Anthropic
