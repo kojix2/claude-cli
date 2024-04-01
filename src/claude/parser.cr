@@ -42,6 +42,10 @@ module Claude
         opt.message = message
       end
 
+      on("-f", "--file FILE", "File to use") do |fname|
+        opt.files << fname
+      end
+
       _on_debug_
 
       on("-v", "--version", "Show version") do

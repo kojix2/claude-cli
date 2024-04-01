@@ -10,6 +10,7 @@ module Claude
     property action : Action = Action::Message
     property model : String = ""
     property message : String = ""
+    property files : Array(String) = Array(String).new
     property system_message : String?
     property max_tokens : UInt32 = 1024 # FIXME
     property metadata : String?

@@ -15,9 +15,9 @@ module Claude
       include JSON::Serializable
 
       property role : String
-      property content : String | Array(ContentBlock)
+      property content : String | Array(ContentBlock | String)
 
-      def initialize(@role : String, @content : String | Array(ContentBlock))
+      def initialize(@role : String, @content : String | Array(ContentBlock | String))
       end
     end
   end
